@@ -1,0 +1,15 @@
+# ImageNet Subset Class Mapping
+# Format: label, class_name
+# Labels match Hugging Face ImageNet (0-999)
+#==================================================
+
+1, goldfish
+151, Chihuahua
+281, tabby_cat
+291, lion
+325, sulphur_butterfly
+386, African_elephant
+430, basketball
+466, bullet_train
+496, Christmas_stocking
+950, orange
