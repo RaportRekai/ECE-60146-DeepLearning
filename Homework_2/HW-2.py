@@ -366,6 +366,18 @@ if __name__ == "__main__":
     dumb_img = []
     perf_img = CustomDataset(root='./my_images',transform=transform_custom,sample_len=1000)
     
+    #Plotting images from DataLoader
+    print(" Displaying a batch of 4 images from DataLoader...")
+    loader = DataLoader(
+            perf_img,
+            batch_size=4,
+            num_workers=0,
+            shuffle=False,
+            pin_memory=0
+        )
+    print_batch = next(iter(loader))
+    show_images(print_batch, [1,2,3,4], rows=2, cols=2, figsize=(15, 6), save_path='batch_images.png')
+    
     # Raw loading time
     start = time.perf_counter()
     for i in range(1000):
