@@ -306,7 +306,7 @@ if __name__ == "__main__":
     for i in range(0, len(imagenet_dataset.samples), imagenet_dataset.images_per_class):
         img = Image.open(imagenet_dataset.samples[i][0]).convert('RGB')
         images.append(np.array(img) / 255.0)
-        labels.append(imagenet_dataset.samples[i][1])
+        labels.append(get_class_name(imagenet_dataset.samples[i][1]))
     print(len(images))
     show_images(images, labels, rows=2, cols=5, figsize=(15, 6), save_path='imagenet_samples.png')
     
@@ -332,7 +332,7 @@ if __name__ == "__main__":
             tr_img = imagenet_dataset[i][0]
             tr_imgs.append(tr_img)
             labels.append(f"Augmented {j+1}")
-        show_images(tr_imgs, labels, rows=1, cols=4, figsize=(15, 5), save_path='augmentation_comparison.png')
+        show_images(tr_imgs, labels, rows=1, cols=4, figsize=(15, 5), save_path=f'augmentation_comparison_{i}.png')
     
     
     
